@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shoplane | Premium eCommerce</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg" style="background:#111;border-bottom:2px solid #ff6600;">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html" style="color:#ff6600;font-size:26px;">
+      SHOPIFY
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link text-white category-link" data-target="clothing-products" href="#">Clothing</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white category-link" data-target="electronics-products" href="#">Accessories</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" href="cart.html">
+            <i class="fas fa-shopping-cart"></i>
+            Cart <span class="badge bg-danger cart-badge">0</span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+      </div>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/img1.png" class="d-block w-100" alt="Fashion" />
+          <div class="carousel-caption">
+            <h2>PUMA Flat 30% Offer</h2>
+            <p>Upgrade your wardrobe with the latest collection</p>
+            <a href="#clothing-products" class="btn btn-primary">Shop Now</a>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="img/img2.png" class="d-block w-100" alt="Shoes" />
+          <div class="carousel-caption">
+            <h2>Exclusive Footwear Collection</h2>
+            <p>Get the best deals on top brands</p>
+            <a href="#clothing-products" class="btn btn-primary">Shop Now</a>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="img/img3.png" class="d-block w-100" alt="Watches" />
+          <div class="carousel-caption">
+            <h2>Luxury Watches Collection</h2>
+            <p>Stylish and premium designs for all occasions</p>
+            <a href="#electronics-products" class="btn btn-primary">Shop Now</a>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <div class="container mt-5">
+      <h2 class="section-title">🔥 Trending Products</h2>
+      <div id="trending-products" class="row"></div>
+
+      <h2 class="section-title mt-5">👗 Clothing Collection</h2>
+      <div id="clothing-products" class="row"></div>
+
+      <h2 class="section-title mt-5">💻 Electronics & Gadgets</h2>
+      <div id="electronics-products" class="row"></div>
+    </div>
+
+    <footer class="footer mt-5">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-3">
+            <h5>ONLINE STORE</h5>
+            <ul class="footer-list">
+              <li><a href="#clothing-products">Men Clothing</a></li>
+              <li><a href="#clothing-products">Women Clothing</a></li>
+              <li><a href="#electronics-products">Men Accessories</a></li>
+              <li><a href="#electronics-products">Women Accessories</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            <h5>HELPFUL LINKS</h5>
+            <ul class="footer-list">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            <h5>BRAND PARTNERS</h5>
+            <ul class="footer-list">
+              <li>Zara</li>
+              <li>Pantaloons</li>
+              <li>Levi's</li>
+              <li>UCB</li>
+              <li>+ Many More</li>
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            <h5>ADDRESS</h5>
+            <ul class="footer-list">
+              <li>Boys Hostel A</li>
+              <li>IET DAVV</li>
+              <li>Indore - 452017</li>
+              <li>India</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-12 text-center">
+          <p class="copyright">
+            © 2025 Shopify | Designed by <strong>Prakhar Agrawal</strong>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      loadProducts();
+    </script>
+    <script>
+document.querySelectorAll(".category-link").forEach(link=>{
+  link.addEventListener("click",()=>{
+    const target = document.getElementById(link.dataset.target);
+    if(target){
+      target.scrollIntoView({behavior:"smooth"});
+    }
+  });
+});
+</script>
+
+<!-- CHATBOT BUTTON -->
+<style>
+    :root {
+        --primary: #ff7a00;      /* Orange */
+        --dark: #000000;
+        --light: #ffffff;
+    }
+
+    #chat-toggle-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 60px;
+        height: 60px;
+        background: var(--primary);
+        color: var(--light);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+        cursor: pointer;
+        z-index: 9999;
+        transition: 0.3s ease;
+        box-shadow: 0 0 10px rgba(255,122,0,0.5);
+    }
+
+    #chat-window {
+        position: fixed;
+        right: 20px;
+        bottom: 100px;
+        width: 350px;
+        height: 420px;
+        max-height: 70%;
+        background: var(--dark);
+        border: 2px solid var(--primary);
+        border-radius: 12px;
+        display: none;
+        flex-direction: column;
+        z-index: 9999;
+        overflow: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    #chat-window.fullscreen {
+        width: 100%;
+        height: 100%;
+        right: 0px;
+        bottom: 0px;
+        border-radius: 0;
+    }
+
+    #chat-header {
+        background: var(--primary);
+        color: var(--dark);
+        padding: 12px;
+        font-weight: 700;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #chat-body {
+        flex: 1;
+        padding: 10px;
+        overflow-y: auto;
+        background: #111;
+        color: var(--light);
+        font-size: 14px;
+    }
+
+    .msg {
+        margin: 8px 0;
+        padding: 10px;
+        border-radius: 8px;
+        max-width: 80%;
+    }
+
+    .user-msg {
+        background: #222;
+        margin-left: auto;
+        border-left: 3px solid var(--primary);
+    }
+
+    .bot-msg {
+        background: #ff7a00;
+        color: #000;
+        margin-right: auto;
+    }
+
+    #chat-input-area {
+        display: flex;
+        padding: 10px;
+        background: #222;
+    }
+
+    #chat-input {
+        flex: 1;
+        background: #111;
+        color: var(--light);
+        border: 1px solid #333;
+        padding: 8px;
+        border-radius: 6px;
+    }
+
+    #send-btn {
+        margin-left: 8px;
+        background: var(--primary);
+        color: var(--dark);
+        padding: 8px 14px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+</style>
+
+<div id="chat-toggle-btn">💬</div>
+
+<div id="chat-window">
+    <div id="chat-header">
+        AI Assistant
+        <button id="full-btn" style="background:none;border:none;font-size:18px;cursor:pointer;">⤢</button>
+    </div>
+
+    <div id="chat-body"></div>
+
+    <div id="chat-input-area">
+        <input id="chat-input" placeholder="Ask something…" />
+        <button id="send-btn">Send</button>
+    </div>
+</div>
+
+<script>
+    const toggleBtn = document.getElementById("chat-toggle-btn");
+    const chatWindow = document.getElementById("chat-window");
+    const chatBody = document.getElementById("chat-body");
+    const chatInput = document.getElementById("chat-input");
+    const sendBtn = document.getElementById("send-btn");
+    const fullBtn = document.getElementById("full-btn");
+
+    toggleBtn.onclick = () => {
+        chatWindow.style.display = chatWindow.style.display === "flex" ? "none" : "flex";
+    };
+
+    fullBtn.onclick = () => {
+        chatWindow.classList.toggle("fullscreen");
+    };
+
+    function addMessage(text, type) {
+        const msg = document.createElement("div");
+        msg.className = "msg " + type;
+        msg.textContent = text;
+        chatBody.appendChild(msg);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    async function sendMsg() {
+        const text = chatInput.value.trim();
+        if (!text) return;
+        addMessage(text, "user-msg");
+        chatInput.value = "";
+
+        addMessage("Typing...", "bot-msg");
+
+        const res = await fetch("http://localhost:8080/api/ai/chat/completions", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({ message: text })
+        });
+
+        const data = await res.json();
+
+        chatBody.removeChild(chatBody.lastChild); // remove typing msg
+        addMessage(data.reply || "Error from AI", "bot-msg");
+    }
+
+    sendBtn.onclick = sendMsg;
+    chatInput.addEventListener("keydown", e => e.key === "Enter" && sendMsg());
+</script>
+
+
+  </body>
+</html>
