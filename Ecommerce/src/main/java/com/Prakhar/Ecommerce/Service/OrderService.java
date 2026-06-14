@@ -3,6 +3,7 @@ package com.Prakhar.Ecommerce.Service;
 
 import com.Prakhar.Ecommerce.DTO.OrderDto;
 import com.Prakhar.Ecommerce.DTO.OrderItemDto;
+import com.Prakhar.Ecommerce.DTO.OrderItemRequest;
 import com.Prakhar.Ecommerce.Entity.OrderItems;
 import com.Prakhar.Ecommerce.Entity.Orders;
 import com.Prakhar.Ecommerce.Entity.Product;
@@ -110,7 +111,7 @@ public class OrderService {
 
       }
 
-    public void createPendingOrder(String razorpayOrderId, Long amount, String email) {
+    public void createPendingOrder(String razorpayOrderId, Long amount, String email, List<OrderItemRequest> items) {
 
         Orders order = new Orders();
         order.setRazorpayOrderId(razorpayOrderId);
@@ -118,6 +119,27 @@ public class OrderService {
         order.setEmail(email);
         order.setStatus("PENDING");
         order.setOrderDate(new Date());
+        List<OrderItems> orderItemsList =
+                new ArrayList<>();
+        for(OrderItemRequest item : items)
+        {
+            Product product =
+                    productRepository.findById(
+                            item.getProductId()
+                    ).orElseThrow(()-> new RuntimeException("Product not found"));
+
+            OrderItems orderItem =
+                    new OrderItems();
+
+            orderItem.setOrders(order);
+            orderItem.setProduct(product);
+            orderItem.setQuantity(
+                    item.getQuantity()
+            );
+
+            orderItemsList.add(orderItem);
+        }
+        order.setOrderItems(orderItemsList);
 
         orderRepository.save(order);
     }

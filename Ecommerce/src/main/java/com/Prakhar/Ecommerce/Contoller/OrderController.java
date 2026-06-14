@@ -49,7 +49,7 @@ public class OrderController {
 
     @PostMapping("/pending")
     public void createPendingOrder(@RequestBody PaymentUpdateDTO dto) {
-        orderService.createPendingOrder(dto.getOrderId(), dto.getAmount(), dto.getEmail());
+        orderService.createPendingOrder(dto.getOrderId(), dto.getAmount(), dto.getEmail(),dto.getItems());
     }
 
     @PostMapping("/success")

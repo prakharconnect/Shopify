@@ -1,13 +1,22 @@
 package com.Prakhar.EccomPayment.DTO;
 
 
-
+import java.util.List;
 
 public class PaymentUpdateDTO {
     private String orderId;
     private String paymentId;
     private Long amount;
     private String email;
+    List<OrderItemRequest> items;
+
+    public PaymentUpdateDTO(String orderId, String paymentId, Long amount, String email, List<OrderItemRequest> items) {
+        this.orderId = orderId;
+        this.paymentId = paymentId;
+        this.amount = amount;
+        this.email = email;
+        this.items = items;
+    }
 
     public PaymentUpdateDTO(String orderId, String paymentId, Long amount, String email) {
         this.orderId = orderId;
@@ -48,5 +57,13 @@ public class PaymentUpdateDTO {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<OrderItemRequest> getItems() {
+        return items;
+    }
+
+    public void setItems(List<OrderItemRequest> items) {
+        this.items = items;
     }
 }

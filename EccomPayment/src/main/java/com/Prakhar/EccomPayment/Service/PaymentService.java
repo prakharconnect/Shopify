@@ -46,7 +46,8 @@ public class PaymentService {
                 razorOrder.get("id").toString(),
                 null,
                 (long) totalAmount * 100,
-                req.getEmail()
+                req.getEmail(),
+                req.getItems()
         );
 
 
@@ -56,7 +57,8 @@ public class PaymentService {
                         razorOrder.get("id").toString(),
                         null,
                         (long) totalAmount * 100,
-                        req.getEmail()
+                        req.getEmail(),
+                        req.getItems()
                 ),
                 Void.class
         );

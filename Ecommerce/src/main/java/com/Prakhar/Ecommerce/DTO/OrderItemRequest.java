@@ -1,7 +1,5 @@
-package com.Prakhar.EccomPayment.DTO;
+package com.Prakhar.Ecommerce.DTO;
 
-
-import java.util.List;
 
 public class OrderItemRequest {
     private Long productId;

@@ -35,7 +35,7 @@ public class EmailService {
         MimeMessage message = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message, true);
         helper.setTo(to);
-        helper.setSubject("🧾 Shopify Order Confirmation");
+        helper.setSubject("🧾 CartFlow Order Confirmation");
         helper.setText(html, true);
 
         mailSender.send(message);
