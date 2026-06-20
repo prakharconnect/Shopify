@@ -1,6 +1,7 @@
 package com.Prakhar.Ecommerce.Entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -33,6 +34,7 @@ public class Orders {
 
     private Date orderDate;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "orders",cascade = CascadeType.ALL)
     private List<OrderItems> orderItems;
 

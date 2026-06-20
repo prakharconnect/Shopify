@@ -1,6 +1,6 @@
 package com.Prakhar.Ecommerce.Contoller;
 
-import com.Prakhar.Ecommerce.Service.AIService;
+import com.Prakhar.Ecommerce.Service.SpringAiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,8 +12,10 @@ import java.util.Map;
 @CrossOrigin
 public class AiController {
 
+
+
     @Autowired
-    private AIService aiService;
+    private SpringAiService springAiService;
 
     @PostMapping("/chat/completions")
     public ResponseEntity<Map<String, String>> chat(@RequestBody Map<String, String> body) {
@@ -24,7 +26,7 @@ public class AiController {
             return ResponseEntity.badRequest().body(Map.of("reply","Please enter a message."));
         }
 
-        String reply = aiService.chatReply(msg);
+        String reply = springAiService.chat(msg);
 
         return ResponseEntity.ok(Map.of("reply", reply));
     }

@@ -39,7 +39,7 @@ public class OrderService {
         orders.setUser(user);
         orders.setOrderDate(new Date());
         orders.setStatus("Pending");
-        orders.setTotalAmount(totalAmount);
+        orders.setTotalAmount(totalAmount/100);
 
         List<OrderItems> orderItems=new ArrayList<>();
         List<OrderItemDto> orderItemDtos=new ArrayList<>();
@@ -115,7 +115,7 @@ public class OrderService {
 
         Orders order = new Orders();
         order.setRazorpayOrderId(razorpayOrderId);
-        order.setTotalAmount(amount);
+        order.setTotalAmount(amount/100);
         order.setEmail(email);
         order.setStatus("PENDING");
         order.setOrderDate(new Date());

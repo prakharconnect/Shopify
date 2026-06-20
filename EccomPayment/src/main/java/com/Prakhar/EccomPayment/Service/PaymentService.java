@@ -99,18 +99,18 @@ public class PaymentService {
                 Void.class
         );
 
-
-        emailService.sendOrderEmail(
-                email,
-                lastAmount / 100,
-                paymentId,
-                razorOrderId
-        );
+        System.out.println("MAIL CODE REACHED");
+        try {
+            emailService.sendOrderEmail(
+                    email,
+                    lastAmount / 100,
+                    paymentId,
+                    razorOrderId
+            );
+            System.out.println("EMAIL SENT SUCCESS");
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
-
-
-
-
-
-
 }
