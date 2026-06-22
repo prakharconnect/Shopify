@@ -23,7 +23,7 @@ public class EmailService {
                 "<div style='font-family:Arial;background:#111;color:white;padding:20px;border-radius:10px'>" +
                         "<h2 style='color:#ff6600;text-align:center'>✅ Payment Successful</h2>" +
                         "<p>Hello,</p>" +
-                        "<p>Thank you for shopping with <b style='color:#ff6600'>Shopify</b> ❤️</p>" +
+                        "<p>Thank you for shopping with <b style='color:#ff6600'>CartFlow</b> ❤️</p>" +
                         "<h3 style='border-bottom:1px solid #ff6600;padding-bottom:5px'>🧾 Order Summary</h3>" +
                         "<p><b>Order ID:</b> " + orderId + "</p>" +
                         "<p><b>Payment ID:</b> " + paymentId + "</p>" +
