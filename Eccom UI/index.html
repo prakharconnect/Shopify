@@ -157,7 +157,7 @@
       <div class="row mt-4">
         <div class="col-12 text-center">
           <p class="copyright">
-            © 2025 Shopify | Designed by <strong>Prakhar Agrawal</strong>
+            © 2025 CartFlow | Designed by <strong>Prakhar Agrawal</strong>
           </p>
         </div>
       </div>
@@ -345,7 +345,7 @@ document.querySelectorAll(".category-link").forEach(link=>{
 
         addMessage("Typing...", "bot-msg");
 
-        const res = await fetch("http://localhost:8080/api/ai/chat/completions", {
+        const res = await fetch("https://ecommercemain-1025090824552.europe-west1.run.app/api/ai/chat/completions", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({ message: text })

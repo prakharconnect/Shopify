@@ -4,8 +4,13 @@ function loadCart()
 {
     cart = JSON.parse(localStorage.getItem("cart")) || [];
     let cartItems = document.getElementById("cart-items");
-    let totalAmount=0;
-    cartItems.innerHTML="";
+
+if(!cartItems){
+    return;
+}
+
+let totalAmount = 0;
+cartItems.innerHTML = "";
 
     cart.forEach((item,index) => {
         let itemTotal=item.price * item.quantity;
@@ -66,8 +71,10 @@ function addToCart(id,name,price,imageUrl)
 
 function updateCartCounter()
 {
-    
     let badge = document.querySelector(".cart-badge");
+
+    if(!badge) return;
+
     badge.innerText = cart.length;
 
     badge.classList.add("animate");
@@ -108,7 +115,7 @@ async function checkout() {
     };
 
     try{
-        const res = await fetch("http://localhost:8081/payment/create", {
+        const res = await fetch("https://shopify-1025090824552.europe-west1.run.app/payment/create", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(req)
@@ -140,7 +147,7 @@ function openRazorpay(data, email){
     let cartData = JSON.parse(localStorage.getItem("cart")) || [];
     let total = document.getElementById("total-amount").innerText;
 
-    await fetch("http://localhost:8081/payment/verify", {
+    await fetch("https://shopify-1025090824552.europe-west1.run.app/payment/verify", {
     method: "POST",
     headers: {
         "Content-Type": "application/json"
