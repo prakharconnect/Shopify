@@ -21,6 +21,9 @@ public class PaymentService {
 
     private Long lastAmount;
 
+    @Value("${ecommerce.service.url}")
+    private String ecommerceServiceUrl;
+
 
     @Value("${razorpay.keyId}")
     private String key;
@@ -52,7 +55,7 @@ public class PaymentService {
 
 
         restTemplate.postForObject(
-                "http://localhost:8080/orders/pending",
+                ecommerceServiceUrl + "/orders/pending",
                 new PaymentUpdateDTO(
                         razorOrder.get("id").toString(),
                         null,
@@ -83,12 +86,12 @@ public class PaymentService {
 
         OrderDetailsDTO savedOrder =
                 restTemplate.getForObject(
-                        "http://localhost:8080/orders/by-razorpay/" + razorOrderId,
+                        ecommerceServiceUrl+"/orders/by-razorpay/" + razorOrderId,
                         OrderDetailsDTO.class
                 );
 
         restTemplate.postForObject(
-                "http://localhost:8080/orders/success",
+                ecommerceServiceUrl+"/orders/success",
                 new PaymentUpdateDTO(
                         razorOrderId,
                         paymentId,
