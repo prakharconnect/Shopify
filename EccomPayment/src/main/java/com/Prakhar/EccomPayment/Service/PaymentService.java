@@ -65,7 +65,7 @@ public class PaymentService {
                 ),
                 Void.class
         );
-        lastAmount = (long) totalAmount * 100;
+
         PaymentResponse res = new PaymentResponse();
         res.setRazorpayOrderId(razorOrder.get("id"));
         res.setKey(key);
@@ -106,7 +106,7 @@ public class PaymentService {
         try {
             emailService.sendOrderEmail(
                     email,
-                    lastAmount / 100,
+                    savedOrder.getTotalAmount(),
                     paymentId,
                     razorOrderId
             );

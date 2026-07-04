@@ -17,7 +17,6 @@ public class UserService {
      public User registerUser(User user)
      {
          User newUser= userRepository.save(user);
-         System.out.println("user added ......");
          return newUser;
      }
 

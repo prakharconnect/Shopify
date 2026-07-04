@@ -130,7 +130,6 @@ public class OrderService {
 
             OrderItems orderItem =
                     new OrderItems();
-
             orderItem.setOrders(order);
             orderItem.setProduct(product);
             orderItem.setQuantity(
